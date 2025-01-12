@@ -1,3 +1,5 @@
+--- DAY01 ----
+
 -- Create the `users` table with basic user information and constraints
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,                 -- Auto-incrementing primary key for users
@@ -86,3 +88,26 @@ WHERE 0 = -1;
 
 -- Drop the duplicate table `products_bkp2`
 DROP TABLE products_bkp2;
+
+-- Drop the table `products_bkp2` if it exists
+DROP TABLE IF EXISTS products_bkp2;
+
+-- Select all rows from the backup table `products_bkp`
+SELECT * FROM products_bkp;
+
+-- Rename the table `products_bkp` to `products3`
+ALTER TABLE products_bkp RENAME TO products3;
+
+-- Rename the column `product_id` in `products3` to `new_id`
+ALTER TABLE products3 RENAME COLUMN product_id TO new_id;
+
+-- Change the data type of the column `new_id` in `products3` to FLOAT
+ALTER TABLE products3 ALTER COLUMN new_id TYPE FLOAT;
+
+-- Select all rows from the updated table `products3`
+SELECT * FROM products3;
+
+
+
+--- DAY02 ----
+
